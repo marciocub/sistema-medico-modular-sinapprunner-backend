@@ -1,6 +1,8 @@
 spring:
   application:
     name: sistema-medico-app-runner
+  main:
+    web-application-type: none
   datasource:
     url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:sistema_turnos}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: ${DB_USER:root}
@@ -26,3 +28,9 @@ app:
 
 cors:
   allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
+
+logging:
+  file:
+    name: ${LOG_PATH:sistema-medico-backend.log}
+  level:
+    root: INFO
