@@ -1,0 +1,65 @@
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: sistema-medico-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+      MYSQL_DATABASE: sistema_turnos
+      MYSQL_USER: ${DB_USER:-medico}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-root}
+    ports:
+      - "3311:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - sistema-medico-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD:-root}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend (Spring Boot)
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sistema-medico-backend
+    restart: unless-stopped
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: sistema_turnos
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+      JWT_SECRET: ${JWT_SECRET:-cambiame-en-produccion-minimo-256-bits-para-hs256-algoritmo}
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - sistema-medico-network
+
+  # Frontend (React + Vite + Nginx)
+  frontend:
+    build:
+      context: ../sistema-medico-modular-frontend
+      dockerfile: Dockerfile
+    container_name: sistema-medico-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - sistema-medico-network
+
+networks:
+  sistema-medico-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
+
