@@ -34,6 +34,7 @@ services:
       DB_USER: root
       DB_PASSWORD: ${DB_PASSWORD:-root}
       JWT_SECRET: ${JWT_SECRET:-cambiame-en-produccion-minimo-256-bits-para-hs256-algoritmo}
+      CORS_ORIGINS: http://localhost:5173,http://localhost:3000
     ports:
       - "8080:8080"
     depends_on:

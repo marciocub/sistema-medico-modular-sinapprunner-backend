@@ -1,9 +1,11 @@
 package com.sistema.modular.app.controller;
 
+import com.sistema.modular.profesionales.EspecialidadesApi;
 import com.sistema.modular.profesionales.ProfesionalesApi;
+import com.sistema.modular.profesionales.dto.EspecialidadRequest;
+import com.sistema.modular.profesionales.dto.EspecialidadResponse;
 import com.sistema.modular.profesionales.dto.ProfesionalRequest;
 import com.sistema.modular.profesionales.dto.ProfesionalResponse;
-import com.sistema.modular.profesionales.dto.EspecialidadResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -15,9 +17,12 @@ import java.util.List;
 public class ProfesionalesController {
 
     private final ProfesionalesApi profesionalesApi;
+    private final EspecialidadesApi especialidadesApi;
 
-    public ProfesionalesController(ProfesionalesApi profesionalesApi) {
+    public ProfesionalesController(ProfesionalesApi profesionalesApi,
+                                   EspecialidadesApi especialidadesApi) {
         this.profesionalesApi = profesionalesApi;
+        this.especialidadesApi = especialidadesApi;
     }
 
     @PostMapping("/medicos")
@@ -38,6 +43,25 @@ public class ProfesionalesController {
 
     @GetMapping("/especialidades")
     public ResponseEntity<List<EspecialidadResponse>> listarEspecialidades() {
-        return ResponseEntity.ok(profesionalesApi.listarEspecialidades());
+        return ResponseEntity.ok(especialidadesApi.listarEspecialidades());
+    }
+
+    @PostMapping("/especialidades")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<EspecialidadResponse> crearEspecialidad(@RequestBody EspecialidadRequest request) {
+        return ResponseEntity.ok(especialidadesApi.crearEspecialidad(request));
+    }
+
+    @PutMapping("/especialidades/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<EspecialidadResponse> actualizarEspecialidad(@PathVariable Long id, @RequestBody EspecialidadRequest request) {
+        return ResponseEntity.ok(especialidadesApi.actualizarEspecialidad(id, request));
+    }
+
+    @DeleteMapping("/especialidades/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> eliminarEspecialidad(@PathVariable Long id) {
+        especialidadesApi.eliminarEspecialidad(id);
+        return ResponseEntity.noContent().build();
     }
 }
