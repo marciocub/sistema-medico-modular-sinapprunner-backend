@@ -37,6 +37,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/api/pacientes/registro").permitAll()
                 .requestMatchers("/api/administradores/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.POST, "/api/medicos").hasRole("ADMIN")
+                .requestMatchers("/actuator/**").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
