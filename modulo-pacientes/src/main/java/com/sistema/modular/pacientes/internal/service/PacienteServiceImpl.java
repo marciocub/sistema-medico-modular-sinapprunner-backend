@@ -4,7 +4,7 @@ import com.sistema.modular.pacientes.*;
 import com.sistema.modular.pacientes.dto.*;
 import com.sistema.modular.pacientes.internal.entity.PacienteEntity;
 import com.sistema.modular.pacientes.internal.repository.PacienteRepository;
-import com.sistema.modular.pacientes.mapper.PacienteMapper;
+import com.sistema.modular.pacientes.util.PacienteMapperUtil;
 import com.sistema.modular.seguridad.SeguridadApi;
 import com.sistema.modular.seguridad.dto.Rol;
 import com.sistema.modular.seguridad.dto.UsuarioRegistroRequest;
@@ -15,14 +15,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class PacienteServiceImpl implements PacientesApi {
 
     private final PacienteRepository pacienteRepository;
-    private final PacienteMapper pacienteMapper;
     private final SeguridadApi seguridadApi;
 
     public PacienteServiceImpl(PacienteRepository pacienteRepository,
-                               PacienteMapper pacienteMapper,
                                SeguridadApi seguridadApi) {
         this.pacienteRepository = pacienteRepository;
-        this.pacienteMapper = pacienteMapper;
         this.seguridadApi = seguridadApi;
     }
 
@@ -42,13 +39,13 @@ public class PacienteServiceImpl implements PacientesApi {
                 .direccion(request.direccion())
                 .activo(true)
                 .build();
-        return pacienteMapper.toResponse(pacienteRepository.save(entity));
+        return PacienteMapperUtil.toResponse(pacienteRepository.save(entity));
     }
 
     @Override
     public PacienteResponse obtenerPacientePorId(Long id) {
         return pacienteRepository.findById(id)
-                .map(pacienteMapper::toResponse)
+                .map(PacienteMapperUtil::toResponse)
                 .orElseThrow(() -> new IllegalArgumentException("Paciente no encontrado: " + id));
     }
 
@@ -62,7 +59,7 @@ public class PacienteServiceImpl implements PacientesApi {
     @Override
     public java.util.List<PacienteResponse> listarPacientes() {
         return pacienteRepository.findAll().stream()
-                .map(pacienteMapper::toResponse)
+                .map(PacienteMapperUtil::toResponse)
                 .toList();
     }
 }

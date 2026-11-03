@@ -5,7 +5,7 @@ import com.sistema.modular.profesionales.dto.EspecialidadRequest;
 import com.sistema.modular.profesionales.dto.EspecialidadResponse;
 import com.sistema.modular.profesionales.internal.entity.EspecialidadEntity;
 import com.sistema.modular.profesionales.internal.repository.EspecialidadRepository;
-import com.sistema.modular.profesionales.mapper.EspecialidadMapper;
+import com.sistema.modular.profesionales.util.EspecialidadMapperUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -14,12 +14,9 @@ import java.util.List;
 public class EspecialidadServiceImpl implements EspecialidadesApi {
 
     private final EspecialidadRepository especialidadRepository;
-    private final EspecialidadMapper especialidadMapper;
 
-    public EspecialidadServiceImpl(EspecialidadRepository especialidadRepository,
-                                   EspecialidadMapper especialidadMapper) {
+    public EspecialidadServiceImpl(EspecialidadRepository especialidadRepository) {
         this.especialidadRepository = especialidadRepository;
-        this.especialidadMapper = especialidadMapper;
     }
 
     @Override
@@ -32,13 +29,13 @@ public class EspecialidadServiceImpl implements EspecialidadesApi {
                 .nombre(request.nombre().trim())
                 .activo(true)
                 .build();
-        return especialidadMapper.toResponse(especialidadRepository.save(entity));
+        return EspecialidadMapperUtil.toResponse(especialidadRepository.save(entity));
     }
 
     @Override
     public EspecialidadResponse obtenerEspecialidadPorId(Long id) {
         return especialidadRepository.findById(id)
-                .map(especialidadMapper::toResponse)
+                .map(EspecialidadMapperUtil::toResponse)
                 .orElseThrow(() -> new IllegalArgumentException("Especialidad no encontrada: " + id));
     }
 
@@ -48,7 +45,7 @@ public class EspecialidadServiceImpl implements EspecialidadesApi {
         EspecialidadEntity entity = especialidadRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Especialidad no encontrada: " + id));
         entity.setNombre(request.nombre().trim());
-        return especialidadMapper.toResponse(especialidadRepository.save(entity));
+        return EspecialidadMapperUtil.toResponse(especialidadRepository.save(entity));
     }
 
     @Override
@@ -63,7 +60,7 @@ public class EspecialidadServiceImpl implements EspecialidadesApi {
     @Override
     public List<EspecialidadResponse> listarEspecialidades() {
         return especialidadRepository.findAll().stream()
-                .map(especialidadMapper::toResponse)
+                .map(EspecialidadMapperUtil::toResponse)
                 .toList();
     }
 

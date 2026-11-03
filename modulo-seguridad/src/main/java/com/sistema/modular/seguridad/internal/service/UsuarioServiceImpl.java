@@ -4,7 +4,7 @@ import com.sistema.modular.seguridad.*;
 import com.sistema.modular.seguridad.dto.*;
 import com.sistema.modular.seguridad.internal.entity.UsuarioEntity;
 import com.sistema.modular.seguridad.internal.repository.UsuarioRepository;
-import com.sistema.modular.seguridad.mapper.UsuarioMapper;
+import com.sistema.modular.seguridad.util.UsuarioMapperUtil;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,14 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class UsuarioServiceImpl implements SeguridadApi {
 
     private final UsuarioRepository usuarioRepository;
-    private final UsuarioMapper usuarioMapper;
     private final BCryptPasswordEncoder passwordEncoder;
 
     public UsuarioServiceImpl(UsuarioRepository usuarioRepository,
-                              UsuarioMapper usuarioMapper,
                               BCryptPasswordEncoder passwordEncoder) {
         this.usuarioRepository = usuarioRepository;
-        this.usuarioMapper = usuarioMapper;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -36,7 +33,7 @@ public class UsuarioServiceImpl implements SeguridadApi {
                 .rol(request.rol())
                 .enabled(true)
                 .build();
-        return usuarioMapper.toResponse(usuarioRepository.save(entity));
+        return UsuarioMapperUtil.toResponse(usuarioRepository.save(entity));
     }
 
     @Override
@@ -55,7 +52,7 @@ public class UsuarioServiceImpl implements SeguridadApi {
     @Override
     public UsuarioResponse obtenerUsuarioPorUsername(String username) {
         return usuarioRepository.findByUsername(username)
-                .map(usuarioMapper::toResponse)
+                .map(UsuarioMapperUtil::toResponse)
                 .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado: " + username));
     }
 
@@ -70,6 +67,6 @@ public class UsuarioServiceImpl implements SeguridadApi {
         UsuarioEntity usuario = usuarioRepository.findByUsername(username)
                 .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado: " + username));
         usuario.setRol(Rol.valueOf(rol.toUpperCase()));
-        return usuarioMapper.toResponse(usuarioRepository.save(usuario));
+        return UsuarioMapperUtil.toResponse(usuarioRepository.save(usuario));
     }
 }

@@ -4,7 +4,7 @@ import com.sistema.modular.profesionales.*;
 import com.sistema.modular.profesionales.dto.*;
 import com.sistema.modular.profesionales.internal.entity.ProfesionalEntity;
 import com.sistema.modular.profesionales.internal.repository.ProfesionalRepository;
-import com.sistema.modular.profesionales.mapper.ProfesionalMapper;
+import com.sistema.modular.profesionales.util.ProfesionalMapperUtil;
 import com.sistema.modular.seguridad.SeguridadApi;
 import com.sistema.modular.seguridad.dto.Rol;
 import com.sistema.modular.seguridad.dto.UsuarioRegistroRequest;
@@ -15,14 +15,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProfesionalServiceImpl implements ProfesionalesApi {
 
     private final ProfesionalRepository profesionalRepository;
-    private final ProfesionalMapper profesionalMapper;
     private final SeguridadApi seguridadApi;
 
     public ProfesionalServiceImpl(ProfesionalRepository profesionalRepository,
-                                  ProfesionalMapper profesionalMapper,
                                   SeguridadApi seguridadApi) {
         this.profesionalRepository = profesionalRepository;
-        this.profesionalMapper = profesionalMapper;
         this.seguridadApi = seguridadApi;
     }
 
@@ -40,13 +37,13 @@ public class ProfesionalServiceImpl implements ProfesionalesApi {
                 .especialidad(request.especialidad())
                 .activo(true)
                 .build();
-        return profesionalMapper.toResponse(profesionalRepository.save(entity));
+        return ProfesionalMapperUtil.toResponse(profesionalRepository.save(entity));
     }
 
     @Override
     public ProfesionalResponse obtenerProfesionalPorId(Long id) {
         return profesionalRepository.findById(id)
-                .map(profesionalMapper::toResponse)
+                .map(ProfesionalMapperUtil::toResponse)
                 .orElseThrow(() -> new IllegalArgumentException("Profesional no encontrado: " + id));
     }
 
@@ -66,7 +63,7 @@ public class ProfesionalServiceImpl implements ProfesionalesApi {
     @Override
     public java.util.List<ProfesionalResponse> listarProfesionales() {
         return profesionalRepository.findAll().stream()
-                .map(profesionalMapper::toResponse)
+                .map(ProfesionalMapperUtil::toResponse)
                 .toList();
     }
 
