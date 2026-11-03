@@ -1,8 +1,8 @@
 package com.sistema.modular.pacientes.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
+
+import jakarta.validation.constraints.NotBlank;
 
 public record PacienteRequest(
     @NotBlank String username,

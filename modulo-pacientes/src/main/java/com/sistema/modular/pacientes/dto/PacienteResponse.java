@@ -1,7 +1,6 @@
 package com.sistema.modular.pacientes.dto;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public record PacienteResponse(
     Long id,
