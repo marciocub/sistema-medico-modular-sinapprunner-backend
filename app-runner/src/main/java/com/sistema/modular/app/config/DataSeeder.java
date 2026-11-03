@@ -23,7 +23,7 @@ public class DataSeeder {
                         .rol(Rol.ADMIN)
                         .enabled(true)
                         .build();
-                usuarioRepository.save(admin);
+                usuarioRepository.save(admin); 
                 System.out.println(">>> Usuario admin creado: username=admin, password=admin123");
             }
         };
