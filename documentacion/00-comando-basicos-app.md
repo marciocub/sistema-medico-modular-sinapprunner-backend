@@ -4,33 +4,33 @@ Aquí tienes los comandos exactos para trabajar con este proyecto Spring Boot mu
 
 ### 📦 **Compilar todo el proyecto**
 ```cmd
-cd d:\desarrollo\repo\sistema-medico-modular-backend
+cd d:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend
 .\mvnw clean install -DskipTests
 ```
 
 ### 🔨 **Compilar solo un módulo específico**
 ```cmd
-cd d:\desarrollo\repo\sistema-medico-modular-backend
+cd d:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend
 .\mvnw clean compile -pl :modulo-seguridad -am -DskipTests
 ```
 *(Reemplaza `:modulo-seguridad` con: `modulo-pacientes`, `modulo-profesionales`, `modulo-turnos`, o `app-runner`)*
 
 ### 📦 **Instalar en repositorio local**
 ```cmd
-cd d:\desarrollo\repo\sistema-medico-modular-backend
+cd d:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend
 .\mvnw clean install -DskipTests
 ```
 
 ### 🚀 **Levantar el backend en consola (foreground)**
 ```cmd
-cd d:\desarrollo\repo\sistema-medico-modular-backend
+cd d:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend
 .\mvnw spring-boot:run -pl :app-runner -am
 ```
 *Esto levanta el backend en http://localhost:8080 y muestra logs en tiempo real. Se detiene con `Ctrl+C`.*
 
 ### 🌐 **Alternativa: Ejecutar el JAR directamente**
 ```cmd
-cd d:\desarrollo\repo\sistema-medico-modular-backend
+cd d:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend
 .\mvnw clean package -DskipTests
 java -jar app-runner\target\app-runner-0.0.1-SNAPSHOT.jar
 ```
@@ -58,7 +58,7 @@ El proyecto está listo para producción con estos comandos.
 ## Comando
 
 ```bash
-cd 'd:/desarrollo/repo/sistema-medico-modular-backend'
+cd 'd:/desarrollo/repo/sistema-medico-modular-sinapprunner-backend'
 ./mvnw clean test -DskipTests=false
 ```
 
@@ -77,7 +77,7 @@ cd 'd:/desarrollo/repo/sistema-medico-modular-backend'
 ## Verificar que todo compila y pasa:
 
 ```bash
-cd 'd:/desarrollo/repo/sistema-medico-modular-backend'
+cd 'd:/desarrollo/repo/sistema-medico-modular-sinapprunner-backend'
 ./mvnw clean test -DskipTests=false
 ```
 

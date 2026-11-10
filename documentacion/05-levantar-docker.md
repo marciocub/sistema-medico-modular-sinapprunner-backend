@@ -20,7 +20,7 @@ services:
 
 ## Comandos
 
-Desde el directorio `d:/desarrollo/repo/sistema-medico-modular-backend/`:
+Desde el directorio `d:/desarrollo/repo/sistema-medico-modular-sinapprunner-backend/`:
 
 ```bash
 # Levantar todos los servicios (construye imágenes si es necesario)

@@ -1,7 +1,7 @@
-D:\desarrollo\repo\sistema-medico-modular-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\dto\PacienteRequest.java
-D:\desarrollo\repo\sistema-medico-modular-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\dto\PacienteResponse.java
-D:\desarrollo\repo\sistema-medico-modular-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\internal\entity\PacienteEntity.java
-D:\desarrollo\repo\sistema-medico-modular-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\internal\repository\PacienteRepository.java
-D:\desarrollo\repo\sistema-medico-modular-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\internal\service\PacienteServiceImpl.java
-D:\desarrollo\repo\sistema-medico-modular-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\PacientesApi.java
-D:\desarrollo\repo\sistema-medico-modular-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\util\PacienteMapperUtil.java
+D:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\dto\PacienteRequest.java
+D:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\dto\PacienteResponse.java
+D:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\internal\entity\PacienteEntity.java
+D:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\internal\repository\PacienteRepository.java
+D:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\internal\service\PacienteServiceImpl.java
+D:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\PacientesApi.java
+D:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend\modulo-pacientes\src\main\java\com\sistema\modular\pacientes\util\PacienteMapperUtil.java

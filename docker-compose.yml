@@ -46,7 +46,7 @@ services:
   # Frontend (React + Vite + Nginx)
   frontend:
     build:
-      context: ../sistema-medico-modular-frontend
+      context: ../sistema-medico-modular-sinapprunner-frontend
       dockerfile: Dockerfile
     container_name: sistema-medico-frontend
     ports:

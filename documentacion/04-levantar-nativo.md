@@ -44,7 +44,7 @@ export CORS_ORIGINS=http://localhost:5173
 Desde la raíz del proyecto backend:
 
 ```bash
-cd d:/desarrollo/repo/sistema-medico-modular-backend
+cd d:/desarrollo/repo/sistema-medico-modular-sinapprunner-backend
 
 # Compilar y ejecutar con Maven
 ./mvnw spring-boot:run -pl app-runner -am
@@ -66,7 +66,7 @@ El backend estará disponible en: **http://localhost:8080**
 ### 1. Instalar dependencias
 
 ```bash
-cd d:/desarrollo/repo/sistema-medico-modular-frontend
+cd d:/desarrollo/repo/sistema-medico-modular-sinapprunner-frontend
 npm install
 ```
 

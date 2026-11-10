@@ -35,6 +35,6 @@ cors:
 
 logging:
   file:
-    name: "D:/desarrollo/logs/sistema-medico-modular-backend/sistema-medico-backend.log"
+    name: "D:/desarrollo/logs/sistema-medico-modular-sinapprunner-backend/sistema-medico-backend.log"
   level:
     root: INFO

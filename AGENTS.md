@@ -1,12 +1,12 @@
 # Contexto y Reglas de Desarrollo - Sistema Médico Modular
 
 ## 📂 Estructura de Rutas del Proyecto
-* **Raíz del Monodular:**  `D:/desarrollo/repo/sistema-medico-modular-backend`
+* **Raíz del Monodular:**  `D:/desarrollo/repo/sistema-medico-modular-sinapprunner-backend`
 * **Backend (Java / Spring Boot Multi-módulo):** 
-  * Carpeta Backend: `[D:/desarrollo/repo/sistema-medico-modular-backend]`
-  * Módulo BFF (App-Runner): `D:\desarrollo\repo\sistema-medico-modular-backend\app-runner]`
+  * Carpeta Backend: `[D:/desarrollo/repo/sistema-medico-modular-sinapprunner-backend]`
+  * Módulo BFF (App-Runner): `D:\desarrollo\repo\sistema-medico-modular-sinapprunner-backend\app-runner]`
 * **Frontend (React + Vite):** 
-  * Carpeta Frontend: `[D:/desarrollo/repo/sistema-medico-modular-frontend]`
+  * Carpeta Frontend: `[D:/desarrollo/repo/sistema-medico-modular-sinapprunner-frontend]`
 
 ---
 
