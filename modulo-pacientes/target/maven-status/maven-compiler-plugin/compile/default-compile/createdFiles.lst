@@ -1,0 +1,8 @@
+com\sistema\modular\pacientes\util\PacienteMapperUtil.class
+com\sistema\modular\pacientes\dto\PacienteRequest.class
+com\sistema\modular\pacientes\internal\entity\PacienteEntity$PacienteEntityBuilder.class
+com\sistema\modular\pacientes\PacientesApi.class
+com\sistema\modular\pacientes\internal\repository\PacienteRepository.class
+com\sistema\modular\pacientes\internal\service\PacienteServiceImpl.class
+com\sistema\modular\pacientes\internal\entity\PacienteEntity.class
+com\sistema\modular\pacientes\dto\PacienteResponse.class

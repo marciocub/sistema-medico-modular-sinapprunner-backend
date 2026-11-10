@@ -1,0 +1,10 @@
+com\sistema\modular\app\controller\PacientesController.class
+com\sistema\modular\app\controller\ProfesionalesController.class
+com\sistema\modular\app\config\DataSeeder.class
+com\sistema\modular\app\controller\AdministradoresController.class
+com\sistema\modular\app\SistemaMedicoApplication.class
+com\sistema\modular\app\controller\TurnosController.class
+com\sistema\modular\app\controller\AuthController.class
+com\sistema\modular\app\config\SecurityConfig.class
+com\sistema\modular\app\service\TokenService.class
+com\sistema\modular\app\config\JwtAuthenticationFilter.class

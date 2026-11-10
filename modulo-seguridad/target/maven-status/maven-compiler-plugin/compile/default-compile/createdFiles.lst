@@ -1,0 +1,12 @@
+com\sistema\modular\seguridad\dto\AuthResponse.class
+com\sistema\modular\seguridad\internal\entity\UsuarioEntity.class
+com\sistema\modular\seguridad\util\UsuarioMapperUtil.class
+com\sistema\modular\seguridad\dto\LoginRequest.class
+com\sistema\modular\seguridad\dto\Rol.class
+com\sistema\modular\seguridad\internal\service\UsuarioServiceImpl.class
+com\sistema\modular\seguridad\SeguridadApi.class
+com\sistema\modular\seguridad\internal\config\SeguridadConfig.class
+com\sistema\modular\seguridad\internal\repository\UsuarioRepository.class
+com\sistema\modular\seguridad\dto\UsuarioRegistroRequest.class
+com\sistema\modular\seguridad\internal\entity\UsuarioEntity$UsuarioEntityBuilder.class
+com\sistema\modular\seguridad\dto\UsuarioResponse.class

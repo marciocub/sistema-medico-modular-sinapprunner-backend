@@ -1,0 +1,9 @@
+com\sistema\modular\turnos\dto\TurnoResponse.class
+com\sistema\modular\turnos\dto\EstadoTurno.class
+com\sistema\modular\turnos\TurnosApi.class
+com\sistema\modular\turnos\internal\entity\TurnoEntity.class
+com\sistema\modular\turnos\internal\repository\TurnoRepository.class
+com\sistema\modular\turnos\internal\service\TurnoServiceImpl.class
+com\sistema\modular\turnos\dto\TurnoRequest.class
+com\sistema\modular\turnos\util\TurnoMapperUtil.class
+com\sistema\modular\turnos\internal\entity\TurnoEntity$TurnoEntityBuilder.class

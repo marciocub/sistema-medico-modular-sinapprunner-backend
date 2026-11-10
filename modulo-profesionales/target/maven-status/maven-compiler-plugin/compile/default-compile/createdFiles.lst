@@ -1,0 +1,16 @@
+com\sistema\modular\profesionales\internal\entity\ProfesionalEntity.class
+com\sistema\modular\profesionales\dto\EspecialidadRequest.class
+com\sistema\modular\profesionales\util\ProfesionalMapperUtil.class
+com\sistema\modular\profesionales\internal\entity\EspecialidadEntity.class
+com\sistema\modular\profesionales\ProfesionalesApi.class
+com\sistema\modular\profesionales\internal\repository\ProfesionalRepository.class
+com\sistema\modular\profesionales\dto\EspecialidadResponse.class
+com\sistema\modular\profesionales\dto\ProfesionalRequest.class
+com\sistema\modular\profesionales\internal\entity\EspecialidadEntity$EspecialidadEntityBuilder.class
+com\sistema\modular\profesionales\util\EspecialidadMapperUtil.class
+com\sistema\modular\profesionales\internal\repository\EspecialidadRepository.class
+com\sistema\modular\profesionales\internal\service\EspecialidadServiceImpl.class
+com\sistema\modular\profesionales\dto\ProfesionalResponse.class
+com\sistema\modular\profesionales\EspecialidadesApi.class
+com\sistema\modular\profesionales\internal\entity\ProfesionalEntity$ProfesionalEntityBuilder.class
+com\sistema\modular\profesionales\internal\service\ProfesionalServiceImpl.class

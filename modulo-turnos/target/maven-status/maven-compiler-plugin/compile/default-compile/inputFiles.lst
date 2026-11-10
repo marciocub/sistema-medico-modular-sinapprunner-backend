@@ -1,0 +1,8 @@
+D:\desarrollo\repo\sistema-medico-modular-backend\modulo-turnos\src\main\java\com\sistema\modular\turnos\dto\EstadoTurno.java
+D:\desarrollo\repo\sistema-medico-modular-backend\modulo-turnos\src\main\java\com\sistema\modular\turnos\dto\TurnoRequest.java
+D:\desarrollo\repo\sistema-medico-modular-backend\modulo-turnos\src\main\java\com\sistema\modular\turnos\dto\TurnoResponse.java
+D:\desarrollo\repo\sistema-medico-modular-backend\modulo-turnos\src\main\java\com\sistema\modular\turnos\internal\entity\TurnoEntity.java
+D:\desarrollo\repo\sistema-medico-modular-backend\modulo-turnos\src\main\java\com\sistema\modular\turnos\internal\repository\TurnoRepository.java
+D:\desarrollo\repo\sistema-medico-modular-backend\modulo-turnos\src\main\java\com\sistema\modular\turnos\internal\service\TurnoServiceImpl.java
+D:\desarrollo\repo\sistema-medico-modular-backend\modulo-turnos\src\main\java\com\sistema\modular\turnos\TurnosApi.java
+D:\desarrollo\repo\sistema-medico-modular-backend\modulo-turnos\src\main\java\com\sistema\modular\turnos\util\TurnoMapperUtil.java
